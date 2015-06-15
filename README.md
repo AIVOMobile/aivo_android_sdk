@@ -43,7 +43,7 @@ Copy the below JAR files into libs folder of your project as picture:
 	<br/>
 	**the libs folder in your project looks like below picture**
 </ul>
-![add](https://github.com/GOSUMobile/android_gosu_game_sdk/blob/master/docs/images/import_sdk_screenshot.jpg)
+![add](https://github.com/AIVOMobile/aivo_android_sdk/blob/master/docs/images/import_sdk_screenshot.jpg)
 <br/>
 <br/>
 # 2. Configure SDK
