@@ -24,9 +24,9 @@ methods such as: SMS, Card.
 **1.1 Install SDK**
 <ul>
 	<li>Download GOSU mobile game SDK for Android here: 
-	https://github.com/GOSUMobile/android_gosu_game_sdk/archive/master.zip </li>
+	https://github.com/AIVOMobile/aivo_android_sdk/archive/master.zip </li>
 	<li>If you use any git tool, you could GIT CLONE here: 
-	https://github.com/GOSUMobile/android_gosu_game_sdk.git</li>
+	https://github.com/AIVOMobile/aivo_android_sdk.git</li>
 
 </ul>
 
@@ -81,7 +81,7 @@ Copy the below JAR files into libs folder of your project as picture:
 - Copy the files */libs/app360.properties* and */clients/[client number]/gosu.properties* into assets folder in your project as 
 below picutre
 
-![add](https://github.com/GOSUMobile/android_gosu_game_sdk/blob/master/docs/images/assets_folder.jpg)
+![add](https://github.com/AIVOMobile/aivo_android_sdk/blob/master/docs/images/assets_folder.jpg)
 
 <br/>
 # 3. Integrate SDK
@@ -94,7 +94,7 @@ Gosu mGosu = new Gosu();
 
 - Process view diagram
 	
-	![add](https://github.com/GOSUMobile/android_gosu_game_sdk/blob/master/docs/images/gosu_sdk_login.png)
+	![add](https://github.com/AIVOMobile/aivo_android_sdk/blob/master/docs/images/gosu_sdk_login.png)
 
 Once calling API, it will return to Game Client user's information or failed.<br> 
 
@@ -127,7 +127,7 @@ Once calling API, it will return to Game Client user's information or failed.<br
 **Notes**
 If you want to verify user authorized or authenticated, Please refer to below process view
 
-![add](https://github.com/GOSUMobile/android_gosu_game_sdk/blob/master/docs/images/gosu_sdk_login2.png)
+![add](https://github.com/AIVOMobile/aivo_android_sdk/blob/master/docs/images/gosu_sdk_login2.png)
 
 ```
 The below API is used for verifying user's authorization and authentication
@@ -168,7 +168,7 @@ Return: JSON as below:
 
 - Process view diagram:
 
-![add](https://github.com/GOSUMobile/android_gosu_game_sdk/blob/master/docs/images/gosu_sdk_payment.png)
+![add](https://github.com/AIVOMobile/aivo_android_sdk/blob/master/docs/images/gosu_sdk_payment.png)
 
 Note: Your server game must provide us an **API to push money** to game.
 
