@@ -34,14 +34,14 @@ methods such as: SMS, Card.
 <br/>
 Copy the below JAR files into libs folder of your project as picture:
 <ul>
-	<li>GosuSDK.jar</li>
+	<li>[client code]/GosuSDK.jar</li>
 	<li>google-play-services.jar</li>
 	<li>libGoogleAnalyticsServices.jar</li>
 	<li>app360sdk.jar</li>
 	<li>gson-2.3.jar</li>
 	<li>retrofit-1.8.0.jar</li>
 	<br/>
-	**As below picture**
+	**the libs folder in your project looks like below picture**
 </ul>
 ![add](https://github.com/GOSUMobile/android_gosu_game_sdk/blob/master/docs/images/import_sdk_screenshot.jpg)
 <br/>
@@ -78,7 +78,7 @@ Copy the below JAR files into libs folder of your project as picture:
     <service android:name="com.gusu.mobile.sdk.GCMIntentService" /> 
 ```
 **2.2 Configure properties file**
-- Copy the files */libs/app360.properties* and */clients/[client number]/gosu.properties* into assets folder in your project as 
+- Copy the files */libs/app360.properties* and */libs/[client code]/gosu.properties* into assets folder in your project as 
 below picutre
 
 ![add](https://github.com/AIVOMobile/aivo_android_sdk/blob/master/docs/images/assets_folder.jpg)
