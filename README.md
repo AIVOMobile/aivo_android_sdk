@@ -34,7 +34,7 @@ methods such as: SMS, Card.
 <br/>
 Copy the below JAR files into libs folder of your project as picture:
 <ul>
-	<li>[client code]/GosuSDK.jar</li>
+	<li>GosuSDK_vx.xx.jar (the latest version)</li>
 	<li>google-play-services.jar</li>
 	<li>libGoogleAnalyticsServices.jar</li>
 	<li>app360sdk.jar</li>
@@ -164,7 +164,7 @@ Return: JSON as below:
 
 - The method *onLogoutFailed()* will be invoked when logout failed
 
-**3.4 Payment Directly (means: using telco card to by gold in game)**
+**3.4 Payment Directly (means: Buying GOLD in game by telco card)**
 
 - Process view diagram:
 
@@ -217,16 +217,45 @@ Note: Your server game must provide us an **API to push money** to game.
 	 1			| Payment is successful
 
 ```
+**3.5 Payment Via GOSU Oauth (means: Buying GOLD in Game by GOSU eWallet)**
 
-**3.5 SNS-Facebook**
+- Process view diagram:
 
-3.5.1 Invite friends
+![add](https://github.com/AIVOMobile/aivo_android_sdk/blob/master/docs/images/gosu_sdk_payment.png)
+
+- Calling API
+``` java
+	mGosu.payment(gameServerID, orderID,new OnPaymentListener(){
+		@Override
+	    public void onPaymentSuccessful(String Message) {
+
+		}
+
+		@Override
+	    public void onPaymentFailed(String Message, int ErrorCode) {
+
+	    }		
+	}); 
+
+```
+```
+	/**
+	* API's parameters:
+	*
+	* @gameServerID: this is ID of your Game Server
+	* @orderID: code of transaction that your system (Game Server) generate to record transaction's information
+	/*	
+```
+
+**3.6 SNS-Facebook**
+
+3.6.1 Invite friends
 
 ``` java
 	mGosu.inviteFacebook();
 ```
 
-3.5.2 Share on wall
+3.6.2 Share on wall
 
 ``` java
 	mGosu.shareFacebook(String imagepath);
