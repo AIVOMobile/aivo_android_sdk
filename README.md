@@ -164,7 +164,7 @@ Return: JSON as below:
 
 - The method *onLogoutFailed()* will be invoked when logout failed
 
-**3.4 Payment**
+**3.4 Payment Directly (means: using telco card to by gold in game)**
 
 - Process view diagram:
 
