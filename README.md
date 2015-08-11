@@ -221,31 +221,70 @@ Note: Your server game must provide us an **API to push money** to game.
 
 - Process view diagram:
 
-![add](https://github.com/AIVOMobile/aivo_android_sdk/blob/master/docs/images/gosu_sdk_payment.png)
+![add](https://github.com/AIVOMobile/aivo_android_sdk/blob/master/docs/images/gosu_sdk_payment2.png)
 
 - Calling API
 ``` java
-	mGosu.payment(gameServerID, orderID,new OnPaymentListener(){
-		@Override
-	    public void onPaymentSuccessful(String Message) {
+	mGosu.payment_oauth(serviceid, servicekey, orderid, orderinfor, amount, new OnPaymentOauthListener()){	
 
-		}
+			@Override
+			public void onPaymentSuccessful(String Message) {}
+			
+			@Override
+			public void onPaymentFailed(String Message, int ErrorCode) {}
 
-		@Override
-	    public void onPaymentFailed(String Message, int ErrorCode) {
+			@Override
+			public void onLinkAccountSuccessful(String UserId, String UserName, String AccessToken) {}
 
-	    }		
-	}); 
+			@Override
+			public void onLinkAccountFailed(String UserId,String UserName, String AccessToken) {}
+	);
 
 ```
 ```
 	/**
 	* API's parameters:
 	*
-	* @gameServerID: this is ID of your Game Server
-	* @orderID: code of transaction that your system (Game Server) generate to record transaction's information
+	* @serviceid: provided in gosu.properties
+	* @servicekey: provided in gosu.properties
+	* @orderid: code of transaction that your system (Game Server) generate to record transaction's information
+	* @orderinfor: order's information
+	* @amount: amount of money which users want to buy
+	* 
 	/*	
 ```
+
+- FOR GUEST Users: the method *onLinkAccountSuccessful or onLinkAccountFailed* will be invoked when payment successfully
+```
+	userId:
+	userName:
+	accessToken:
+```
+
+- FOR GOSU Users: the method *onPaymentSuccessful(message)* will be invoked when payment successfully
+```
+	message: successful message
+```
+
+-  FOR GOSU Users: the method *onPaymentFailed(message, errorCode)* will be invoked when payment failed
+```
+	message: failed message
+	errorCode: code of error as below table
+
+	Error Code  | Message
+	------------| -----------------------------------------------
+	 -7			| Expected game parameter
+	 -6			| User is invalid
+	 -5			| Actor in game is not existed
+	 -4			| No. of GOSU exchange is invalid
+	 -1			| Payment method is invalid
+	 -2			| Account balance is not sufficient for payment
+	 -888		| System error
+	 -999		| mWork payment error
+	 1			| Payment is successful
+
+```
+
 
 **3.6 SNS-Facebook**
 
